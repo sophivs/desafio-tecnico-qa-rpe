@@ -21,7 +21,7 @@ for (const user of loginData) {
     });
 }
 
-test('Home page elements', async ({ page }) => {
+test('forgot password', async ({ page }) => {
     const page_manager = new pageManager(page);
     const homePage = page_manager.getHomePage();
     await homePage.forgotPassword('admin');

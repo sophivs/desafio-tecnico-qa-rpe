@@ -15,22 +15,26 @@ test.describe('Test include client', () =>{
             const clientPage = page_manager.getClientPage();
 
             if (client.nome) {
+                // If the value is random randomize it.
                 const nomeValue = client.nome === 'random' ? faker.person.fullName() : client.nome;
                 await clientPage.fillName(nomeValue);
             }
             if (client.cpf) {
+                // If the value is random randomize it, use only values with 11 digits.
                 const cpfValue = client.cpf === 'random' 
                     ? (faker.number.int({ min: 10000000000, max: 99999999999 }) + Math.random()).toFixed(0) 
                     : client.cpf;
                 await clientPage.fillCPF(cpfValue);
             }
             if (client.status) {
+                // If the value is random randomize it.
                 const statusValue = client.status === 'random' ? faker.helpers.arrayElement(['Ativo', 'Inativo']) : client.status;
                 await clientPage.fillStatus(statusValue);
             }
             if (client.saldo) {
+                // If the value is random randomize it only with positive values.
                 const saldoValue = client.saldo === 'random' 
-                    ? (faker.number.int({ min: 0, max: 10000 }) + Math.random()).toFixed(2) 
+                    ? (faker.number.int({ min: 0 }) + Math.random()).toFixed(2) 
                     : client.saldo;
                 await clientPage.fillBalance(saldoValue);
             }

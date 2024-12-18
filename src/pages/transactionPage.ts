@@ -1,4 +1,4 @@
-import { Locator, Page, expect } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 import { ClientPage } from "./clientPage";
 import { BasePage } from './basePage';
 import { pageManager } from './pageManager';

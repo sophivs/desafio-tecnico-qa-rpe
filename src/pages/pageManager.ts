@@ -1,4 +1,4 @@
-import { Page, expect } from "@playwright/test";
+import { Page } from "@playwright/test";
 import {NavigationPage} from './navigationPage';
 import { BasePage } from "./basePage";
 import { HomePage } from "./homePage";
@@ -21,18 +21,30 @@ export class pageManager extends BasePage {
         this.transactionPage = new TransactionPage(page);
     }
 
+    /**
+     * Get navigation page class.
+     */
     navigateTo(){
         return this.navigationPage
     }
 
+    /**
+     * Get home page class.
+     */
     getHomePage(){
         return this.homePage
     }
 
+    /**
+     * Get client page class.
+     */
     getClientPage(){
         return this.clientPage
     }
 
+    /**
+     * Get transaction page class.
+     */
     getTransactionPage(){
         return this.transactionPage
     }

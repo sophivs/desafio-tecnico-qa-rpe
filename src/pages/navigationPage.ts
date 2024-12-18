@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 import { AppConstants } from '../constants/appConstants';
 import { BasePage } from "./basePage";
 import { pageManager } from "./pageManager";
@@ -13,10 +13,16 @@ export class NavigationPage extends BasePage{
         super(page)
     }
 
+    /**
+     * Navigate do home page.
+     */
     async homePage(){
-        await this.page.goto(AppConstants.INSTANCE_URL);
+        await this.goToUrl(AppConstants.INSTANCE_URL);
     }
 
+    /**
+     * Navigate do include client page.
+     */
     async includeClientPage(){
         await this.homePage();
         const page_manager = new pageManager(this.page);
@@ -28,6 +34,9 @@ export class NavigationPage extends BasePage{
         await expect(this.page.getByText('Incluir Cliente')).toBeVisible();
     }
 
+    /**
+     * Navigate do include transaction page.
+     */
     async includeTransactionPage(){
         await this.homePage();
         const page_manager = new pageManager(this.page);
