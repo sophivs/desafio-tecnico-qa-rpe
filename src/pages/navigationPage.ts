@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
+import { AppConstants } from '../constants/appConstants';
 import { BasePage } from "./basePage";
 
 /**
@@ -10,6 +11,10 @@ export class NavigationPage extends BasePage{
     
     constructor(page:Page){
         super(page)
+    }
+
+    async homePage(){
+        await this.page.goto(AppConstants.INSTANCE_URL)
     }
 
 
