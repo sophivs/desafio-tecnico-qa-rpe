@@ -25,5 +25,17 @@ export class NavigationPage extends BasePage{
         await this.page.locator('a[title="QA"]').click();
         await this.page.getByText('Clientes').click();
         await this.page.locator('a[title="Incluir"]').click();
+        await expect(this.page.getByText('Incluir Cliente')).toBeVisible();
+    }
+
+    async includeTransactionPage(){
+        await this.homePage();
+        const page_manager = new pageManager(this.page);
+        await page_manager.getHomePage().logIn('admin', 'admin');
+
+        await this.page.locator('a[title="QA"]').click();
+        await this.page.getByText('Transações').click();
+        await this.page.getByRole('link', { name: ' Incluir' }).click();
+        await expect(this.page.getByText('Incluir Transacao')).toBeVisible();
     }
 }
