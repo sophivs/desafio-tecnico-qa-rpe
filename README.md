@@ -245,7 +245,11 @@ Os testes serão realizados utilizando uma maquina windows, com um processador i
 
 ### 4.2 - Ferramenta de teste
 
-Para a execução dos testes será utilizado o framework PlayWright e Typescript
+Para a execução dos testes será utilizado o framework PlayWright e Typescript.
+Para rodar o projeto certifique-se que você possui o npm e o node instalados em sua maquina.
+Rode npm install --save-dev @playwright/test para instalar o playwright.
+Rode npx playwright test para executar os testes.
+Rode npx playwright test {test_name} para executar um teste específico.
 
 ## 5 - Levantamento dos cenários e casos de teste
 
@@ -276,7 +280,8 @@ FRONT-20  | Listar transações de todos os clientes.
 FRONT-21  | Listar transações de um cliente especifíco.
 FRONT-22  | Cancelar transação.
 FRONT-23  | Editar cliente deixando campo obrigatório vazio.
-FRONT-23  | Validar informações de cliente em tela de detalhes.
+FRONT-24  | Validar informações de cliente em tela de detalhes.
+FRONT-25  | Esqueci minha senha.
 
 ### 5.2 - Casos de teste
 
