@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Sucessful login",
+    "username": "admin",
+    "password": "admin",
+    "message": "Bem vindo ao Desafio"
+  },
+  {
+    "title": "Wrong username",
+    "username": "admin_wrong",
+    "password": "admin",
+    "message": "Credenciais inválidas"
+  },
+  {
+    "title": "Wrong password",
+    "username": "admin",
+		"password": "admin_wrong",
+    "message": "Credenciais inválidas"
+  },
+  {
+    "title": "Wrong login",
+    "username": "admin_wrong",
+    "password": "admin_wrong",
+    "message": "Credenciais inválidas"
+  }
+]
