@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { pageManager } from '../src/pages/pageManager';
 import transactionRegisterData from '../src/data/transactionRegisterData.json';
 
@@ -15,9 +15,10 @@ test.describe('Test include transaction', () =>{
             const transactionPage = page_manager.getTransactionPage();
 
             if (transaction.nome && transaction.saldo) {
+                // If the any value is random randomize it, balance has to be positive.
                 const nomeValue = transaction.nome === 'random' ? faker.person.fullName() : transaction.nome;
                 const saldoValue = transaction.saldo === 'random' 
-                    ? (faker.number.int({ min: 0, max: 10000 }) + Math.random()).toFixed(2) 
+                    ? (faker.number.int({ min: 0, max: 100000 }) + Math.random()).toFixed(2) 
                     : transaction.saldo;
 
                 // Check if client exists, if not create a new client with the correct balance.
