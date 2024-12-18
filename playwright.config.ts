@@ -1,20 +1,4 @@
 import { defineConfig, devices } from '@playwright/test';
-import { OrtoniReportConfig } from "ortoni-report";
-
-
-const reportConfig: OrtoniReportConfig = {
-  open: process.env.CI ? "never" : "always",
-  folderPath: "report-db",
-  filename: "index.html",
-  title: "Ortoni Test Report",
-  showProject: !true,
-  projectName: "Ortoni-Report",
-  testType: "Release - Nov 09, 2024",
-  authorName: "Koushik (LetCode with Koushik)",
-  base64Image: false,
-  stdIO: false,
-  preferredTheme: "light"
-};
 
 /**
  * Read environment variables from file.
@@ -36,7 +20,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1  : 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [["ortoni-report", reportConfig]],
+  reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,

@@ -10,12 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^9.2.0",
+    "@playwright/test": "^1.49.1",
     "@types/node": "^20.11.19",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@playwright/test": "^1.49.0",
-    "ortoni-report": "^2.0.8",
     "playwright": "^1.46.1"
   }
 }
