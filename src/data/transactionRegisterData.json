@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "nome": "random",
+    "saldo": "random",
+    "tipoSaldo": 0.01,
+    "botao": "Salvar",
+    "mensagem": "Venda realizada com sucesso"
+  },
+  {
+    "id": 2,
+    "nome": "random",
+    "saldo": "random",
+    "tipoSaldo": 0,
+    "botao": "Salvar",
+    "mensagem": "Venda realizada com sucesso"
+  },
+  {
+    "id": 3,
+    "nome": "random",
+    "saldo": "random",
+    "tipoSaldo": -0.01,
+    "botao": "Salvar",
+    "mensagem": "Saldo insuficiente"
+  },
+  {
+    "id": 4,
+    "botao": "Salvar",
+    "mensagem": "Campo Obrigatório"
+  },
+  {
+    "id": 5,
+    "nome": "random",
+    "tipoSaldo": -0.01,
+    "botao": "Salvar",
+    "mensagem": "Campo Obrigatório"
+  },
+  {
+    "id": 6,
+    "nome": "random",
+    "tipoSaldo": -0.01,
+    "botao": "Cancelar",
+    "mensagem": "Pesquisar"
+  }
+]
