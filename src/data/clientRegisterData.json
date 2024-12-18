@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "nome": "random",
+    "cpf": "random",
+    "status": "random",
+    "saldo": "random",
+    "botao": "Salvar",
+    "mensagem": "Cliente salvo com sucesso"
+  },
+  {
+    "id": 2,
+    "botao": "Salvar",
+    "mensagem": "Campo Obrigatório"
+  },
+  {
+    "id": 3,
+    "nome": "random",
+    "cpf": "random",
+    "botao": "Salvar",
+    "mensagem": "Campo Obrigatório"
+  },
+  {
+    "id": 4,
+    "status": "random",
+    "saldo": "random",
+    "botao": "Salvar",
+    "mensagem": "Campo Obrigatório"
+  },
+  {
+    "id": 5,
+    "nome": "random",
+    "cpf": "random",
+    "status": "random",
+    "saldo": "random",
+    "botao": "Limpar",
+    "mensagem": "Incluir Cliente"
+  },
+  {
+    "id": 6,
+    "nome": "random",
+    "cpf": "random",
+    "status": "random",
+    "saldo": "random",
+    "botao": "Cancelar",
+    "mensagem": "Listar Clientes"
+  }
+]
