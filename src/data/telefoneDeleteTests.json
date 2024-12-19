@@ -1,0 +1,71 @@
+[
+    {
+        "testId": 1,
+        "idPortador": 2001,
+        "idTelefone": 2001,
+        "code": 200,
+        "Authorization": "generate",
+        "data": {
+            "httpStatus": "OK",
+            "mensagens": [
+                "Operação realizada com sucesso."
+            ]
+        }
+    },
+    {
+        "testId": 2,
+        "idPortador": 99999999,
+        "idTelefone": 2001,
+        "code": 404,
+        "Authorization": "generate",
+        "data": "Telefone não encontrado para o portador e código informados."
+    },
+    {
+        "testId": 3,
+        "idPortador": 99999999,
+        "idTelefone": "test",
+        "code": 400,
+        "Authorization": "generate",
+        "data": {
+            "message": "Tipo de campo inválido.",
+            "fieldErrors": [
+                {
+                    "field": "idTelefone",
+                    "message": "O tipo do campo deve ser: Long"
+                }
+            ]
+        }
+    },
+    {
+        "testId": 4,
+        "idPortador": 123,
+        "idTelefone": 2001,
+        "code": 401,
+        "Authorization": "Bearer invalid-token",
+        "data": "Unauthorized"
+    },
+    {
+        "testId": 5,
+        "idPortador": 123,
+        "idTelefone": 2001,
+        "code": 403,
+        "Authorization": "Bearer token-without-access",
+        "data": "Forbidden"
+    },
+    {
+        "testId": 6,
+        "idPortador": "%20",
+        "idTelefone": "test",
+        "code": 500,
+        "Authorization": "generate",
+        "data": {
+            "message": "Campo obrigatório não enviado.",
+            "fieldErrors": [
+                {
+                    "field": "idPortador",
+                    "message": "Variável de URI obrigatória."
+                }
+            ]
+        }
+    }
+]

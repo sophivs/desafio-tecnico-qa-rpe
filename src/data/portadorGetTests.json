@@ -1,0 +1,278 @@
+[
+    {
+        "testId": 1,
+        "idPortador": 99999999,
+        "code": 400,
+        "Authorization": "generate",
+        "data": "Cliente titular não encontrado para o codigo informado."
+    },
+    {
+        "testId": 2,
+        "idPortador": 123,
+        "code": 401,
+        "Authorization": "Bearer token-without-access",
+        "data": "Unauthorized"
+    },
+    {
+        "testId": 3,
+        "idPortador": 123,
+        "code": 403,
+        "Authorization": "Bearer invalid-token",
+        "data": "Forbidden"
+    },
+    {
+        "testId": 4,
+        "idPortador": "",
+        "code": 404,
+        "Authorization": "generate",
+        "data": "Not Found"
+    },
+    {
+        "testId": 5,
+        "idPortador": "%20",
+        "code": 500,
+        "Authorization": "generate",
+        "data": {
+            "message": "Campo obrigatório não enviado.",
+            "fieldErrors": [
+                {
+                    "field": "idPortador",
+                    "message": "Variável de URI obrigatória."
+                }
+            ]
+        }
+    },
+    {
+        "testId": 6,
+        "idPortador": "select * from portador",
+        "code": 400,
+        "Authorization": "generate",
+        "data": {
+            "message": "Tipo de campo inválido.",
+            "fieldErrors": [
+                {
+                    "field": "idPortador",
+                    "message": "O tipo do campo deve ser: Long"
+                }
+            ]
+        }
+    },
+    {
+        "testId": 6,
+        "idPortador": 2003,
+        "code": 200,
+        "Authorization": "generate",
+        "data": {
+            "id": 2003,
+            "nome": "MARIO SILVA OLIVEIRA BARROS",
+            "nomeSocial": "MARIA SILVA OLIVEIRA BARROS",
+            "rg": "7687287",
+            "cpf": "32404963058",
+            "cartao": "0000XXXXXXXX4488",
+            "email": "hpay@teste.com.br",
+            "numeroCartaoTruncado": "509005XXXXXX4367",
+            "clienteDataNascimento": "1970-01-01",
+            "rendas": [
+                {
+                    "id": 44,
+                    "valor": 788.0,
+                    "comprovada": "S",
+                    "idPessoa": 2001,
+                    "principal": "principal",
+                    "origem": "origem"
+                }
+            ],
+            "statusCliente": "A",
+            "statusAnalise": "A",
+            "contratoImpresso": "S",
+            "estanoCobranca": "N",
+            "ultimoMotivoBloqueioCliente": "Bloqueio Teste",
+            "extratoClienteResponse": {
+                "limite": 2000.66,
+                "saldoDisponivel": 2000.66,
+                "saldoReservado": 1000.3,
+                "saldoParceladoDisp": 1000.3,
+                "limiteParcelado": 1000.3,
+                "devedorTotal": 600.88,
+                "utilizaLimiteExtra": false,
+                "valorLimiteExtra": 120.33,
+                "limiteExtraTotal": 120.33,
+                "saldoDisponivelExtra": 120.33,
+                "valorFaturaFechada": 1560.6,
+                "clienteEmBloqueioJuridico": false
+            },
+            "valorLancamentosFuturos": 564.3,
+            "pontuacaoFidelidadeResponse": {
+                "idCliente": 2001,
+                "valorPontuacao": 133,
+                "dataReferencia": "2024-01-01",
+                "descricaoPrograma": "descricaoPrograma"
+            },
+            "statusFaturaDigital": "A",
+            "boletos": [
+                {
+                    "id": 1260,
+                    "quantidadesRegistros": 123,
+                    "ordemRegistro": 123,
+                    "codigoBoleto": 6350,
+                    "valorTotal": 689.9,
+                    "valorJuros": 12.5,
+                    "valorPagamentosEfetuados": 155.6
+                }
+            ],
+            "faturaFechada": {
+                "id": 71365768,
+                "dataVencimento": "2022-11-25",
+                "valorTotal": 1350.2,
+                "somaPagamentos": 170.56,
+                "valorMinimoRenegociacao": 120.33,
+                "valorMinimoRotativo": 300.3,
+                "valorPagamentoMinimo": 450.98,
+                "valorPrestacoesParceladas": 356.5,
+                "possuiPagamentoMinimo": true,
+                "hashFatura": "b9a16c4f64ebd04d04e66fa58d37a33c4ed8d506c84b89d83624c9ee66d23f00"
+            },
+            "faturaFutura": {
+                "dataVencimento": "2022-12-25",
+                "valorTotal": 1050.25
+            },
+            "statusCartao": "A",
+            "melhorDiaCompra": 11,
+            "senhaExpirada": true,
+            "ciclo": {
+                "id": 25,
+                "diaCorte": 10,
+                "diaVencimento": 2,
+                "descricao": "VENCIMENTO 2",
+                "ativo": "S",
+                "corteUltimoDiaMes": "N",
+                "diasCarencia": 0,
+                "descricaoContaBancariaCicloAtual": "Banco do Brasil",
+                "descricaoContaBancariaProximoCiclo": "Banco do Brasil"
+            },
+            "dependentes": [
+                {
+                    "id": 124068,
+                    "nome": "FILHO DA CONTA NUMERO 2003",
+                    "nomeSocial": "MARIO OLIVEIRA BARROS",
+                    "cpf": "57465556066",
+                    "sexo": "M",
+                    "nascimento": "1991-11-28",
+                    "grauParentesco": 6,
+                    "statusCartao": "V"
+                }
+            ],
+            "dataFechamentoProxFatura": "2023-01-10",
+            "produto": {
+                "id": 19,
+                "descricao": "PRODUTO PADRAO 19",
+                "isProdutoDigital": "S",
+                "isProdutoBandeirado": "S",
+                "encargos": {
+                    "cobrarMulta": true,
+                    "multa": 150.5,
+                    "regraCalculoMulta": "T",
+                    "ignorarMultaAnterior": true,
+                    "ignorarSaldoRolado": true,
+                    "mora": 13.5,
+                    "regraCalculoMora": "S",
+                    "jurosRotativo": 12.5,
+                    "realizarEstornoJurosPagamento": true
+                },
+                "limiteExtra": {
+                    "percentualPadrao": 15.3,
+                    "valorPadrao": 20.4,
+                    "habilitarClientesNovos": true
+                },
+                "overlimit": {
+                    "percentualSobreUso": 5.32,
+                    "permitePercentualSobreUso": true,
+                    "taxaSobreUso": 5.32,
+                    "permiteTaxaSobreUso": true,
+                    "permiteRepetirMesmoCiclo": true
+                }
+            },
+            "dataCadastro": "2012-12-19",
+            "taxas": [
+                {
+                    "descricao": "TARIFA SEGUNDA VIA CARTAO",
+                    "valorContratado": 10.36,
+                    "desconto": 5.36,
+                    "dataFimDesconto": "2023-09-12",
+                    "dataFimDoCarencia": "2018-09-04",
+                    "numeroCobrancas": 1,
+                    "natureza": "T"
+                },
+                {
+                    "descricao": "TARIFA SEGUNDA VIA CARTAO",
+                    "valorContratado": 10.36,
+                    "desconto": 5.36,
+                    "dataFimDesconto": "2023-09-12",
+                    "dataFimDoCarencia": "2018-09-04",
+                    "numeroCobrancas": 0,
+                    "natureza": "T"
+                }
+            ],
+            "estaEmPerda": false,
+            "numeroCartaoCriptografado": "EiASLRIDRO/u6uCD3bm5cwwtHza9R6Cf9/U00T8KBpE=",
+            "idCartao": 1805011,
+            "permiteAcessoApp": true,
+            "dataEmissaoRG": "2012-12-19",
+            "estaEmAtraso": false,
+            "orgaoEmissorRG": "SSP PB",
+            "totalTentativasValidacaoCartao": 0,
+            "enderecoResidencial": {
+                "logradouro": "Rua residencial",
+                "complemento": "Complemento residencial",
+                "numero": "44",
+                "bairro": "Bairro residencial",
+                "cep": "58000000",
+                "uf": "PB",
+                "cidade": "JOAO PESSOA"
+            },
+            "inibirEnvioFaturaGrafica": false,
+            "enderecoComercial": {
+                "logradouro": "Rua dos comerciários",
+                "complemento": "Complemento dos comerciários",
+                "numero": "123",
+                "bairro": "Bairro dos comerciários",
+                "cep": "58071180",
+                "uf": "PB",
+                "cidade": "Cidade dos comerciários",
+                "empresa": "Empresa",
+                "departamento": "Departamento",
+                "cnpj": "22130511000160"
+            },
+            "enderecoAlternativo": {
+                "logradouro": "Rua dos alternativos",
+                "complemento": "Complemento dos alternativos",
+                "numero": "1322",
+                "bairro": "Bairro dos alternativos",
+                "cep": "58085460",
+                "uf": "PB",
+                "cidade": "Cidade dos alternativos",
+                "tipo": "1"
+            },
+            "transicaoBandeira": "C",
+            "utilizaOverLimitPersonalizado": false,
+            "diasAtrasoTotal": 0,
+            "diasProvisionamento": 1,
+            "produtoTransicaoBandeira": {
+                "id": 1,
+                "descricao": "string",
+                "isProdutoDigital": "string",
+                "encargos": {
+                    "cobrarMulta": true,
+                    "multa": 12.6,
+                    "regraCalculoMulta": "T",
+                    "ignorarMultaAnterior": true,
+                    "ignorarSaldoRolado": true,
+                    "mora": 7.9,
+                    "regraCalculoMora": "S",
+                    "jurosRotativo": 6.3,
+                    "realizarEstornoJurosPagamento": true
+                }
+            }
+        }
+    }
+]

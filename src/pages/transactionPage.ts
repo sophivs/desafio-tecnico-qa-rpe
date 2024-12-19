@@ -63,7 +63,7 @@ export class TransactionPage extends BasePage {
     }
 
     /**
-     * Check if the client to be handled exist.
+     * Check if the client to be handled exist, otherwise create the client.
      * @param name The name to select the client.
      * @param value The transaction value to fill in the balance field.
      */

@@ -1,0 +1,220 @@
+[
+    {
+        "testId": 1,
+        "idPortador": 2001,
+        "code": 200,
+        "Authorization": "generate",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes",
+            "email": "joao.silva@email.com",
+            "nacionalidade": "BRASILEIRA",
+            "cidadeNatal": "SÃO PAULO",
+            "estadoNatal": "SP",
+            "enderecoResidencial": {
+            "numero": "4020",
+            "cep": "58070000",
+            "complemento": "Ap 301",
+            "logradouro": "Av. Presidente Epitácio Pessoa",
+            "bairro": "Lapa",
+            "localidade": "João Pessoa",
+            "uf": "PB",
+            "tempoMoradiaAnos": 3,
+            "tempoMoradiaMeses": 11
+            },
+            "enderecoComercial": {
+            "numero": "4020",
+            "cep": "58070000",
+            "complemento": "Ap 301",
+            "logradouro": "Av. Presidente Epitácio Pessoa",
+            "bairro": "Lapa",
+            "localidade": "João Pessoa",
+            "uf": "PB",
+            "empresa": "Google",
+            "departamento": "Pesquisa e Inovação",
+            "cnpj": "22130511000160"
+            },
+            "enderecoAlternativo": {
+            "numero": "4020",
+            "cep": "58070000",
+            "complemento": "Ap 301",
+            "logradouro": "Av. Presidente Epitácio Pessoa",
+            "bairro": "Lapa",
+            "localidade": "João Pessoa",
+            "uf": "PB",
+            "tipo": "R"
+            },
+            "sexo": "MASCULINO",
+            "dataNascimento": "1992-10-25",
+            "nomePai": "José da Silva",
+            "nomeMae": "Maria da Silva",
+            "idMoradia": 1,
+            "idEscolaridade": 1,
+            "idOcupacao": 1,
+            "renda": {
+            "id": 52256,
+            "valor": 150.5,
+            "comprovada": true
+            },
+            "estadoCivil": "SOLTEIRO",
+            "rg": {
+            "rg": "3040312",
+            "dataEmissao": "2002-05-16",
+            "orgaoEmissor": "SSP",
+            "unidadeFederativa": "PB"
+            },
+            "conjuge": {
+            "nome": "Maria Aparecida dos Santos",
+            "sexo": "MASCULINO",
+            "nomeSocial": "Maria Bonita",
+            "dataNascimento": "1992-10-25",
+            "nomeEmpresa": "Ambev",
+            "idProfissao": 5,
+            "nomeMae": "string",
+            "telefone": {
+                "tipo": "CELULAR",
+                "ramal": "4020",
+                "area": "83",
+                "telefone": "992334329",
+                "receberSMS": false,
+                "faturaDigital": false
+            },
+            "cpf": "67815544410",
+            "escolaridade": "FUNDAMENTAL_COMPLETO",
+            "rg": {
+                "rg": "3040312",
+                "dataEmissao": "2002-05-16",
+                "orgaoEmissor": "SSP",
+                "unidadeFederativa": "PB"
+            },
+            "salario": 2000
+            },
+            "pep": {
+            "cpf": "41827755970",
+            "nome": "string",
+            "justificativa": "String"
+            },
+            "estrangeiro": {
+            "paisOrigem": "Canadá",
+            "documentoPaisOrigem": "SSN - Social Security Number"
+            },
+            "idProfissao": 1,
+            "dataAdmissaoProfissao": "1988-02-16",
+            "quantidadeAnosProfissao": 18,
+            "portadorNecessidadesVisuais": false,
+            "inibirEnvioFaturaGrafica": false
+        },
+        "data": ""
+    },
+    {
+        "testId": 2,
+        "idPortador": 2001,
+        "code": 200,
+        "Authorization": "generate",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes"
+        },
+        "data": ""
+    },
+    {
+        "testId": 3,
+        "idPortador": 2001,
+        "code": 200,
+        "Authorization": "generate",
+        "body": {
+            "nacionalidade": "BRASILEIRA",
+            "cidadeNatal": "SÃO PAULO",
+            "enderecoComercial": {
+            "numero": "4020",
+            "cep": "58070000",
+            "complemento": "Ap 301",
+            "logradouro": "Av. Presidente Epitácio Pessoa",
+            "bairro": "Lapa",
+            "localidade": "João Pessoa",
+            "uf": "PB",
+            "empresa": "Google",
+            "departamento": "Pesquisa e Inovação",
+            "cnpj": "22130511000160"
+            }
+        },
+        "data": ""
+    },
+    {
+        "testId": 4,
+        "idPortador": 99999999,
+        "code": 400,
+        "Authorization": "generate",
+        "body": {
+            "nacionalidade": "BRASILEIRA"
+        },
+        "data": "Cliente titular não encontrado para o codigo informado."
+    },
+    {
+        "testId": 5,
+        "idPortador": 99999999,
+        "code": 401,
+        "Authorization": "Bearer token-without-access",
+        "body": {
+            "nacionalidade": "BRASILEIRA"
+        },
+        "data": "Unauthorized"
+    },
+    {
+        "testId": 6,
+        "idPortador": 99999999,
+        "code": 403,
+        "Authorization": "Bearer token-without-access",
+        "body": {
+            "nacionalidade": "BRASILEIRA"
+        },
+        "data": "Forbidden"
+    },
+    {
+        "testId": 7,
+        "idPortador": "",
+        "code": 404,
+        "Authorization": "generate",
+        "body": {
+            "nacionalidade": "BRASILEIRA"
+        },
+        "data": "Not Found"
+    },
+    {
+        "testId": 8,
+        "idPortador": 2001,
+        "code": 415,
+        "Authorization": "generate",
+        "data": "Campo obrigatório não enviado."
+    },
+    {
+        "testId": 9,
+        "idPortador": "select * from portador",
+        "code": 400,
+        "Authorization": "generate",
+        "data": {
+            "message": "Tipo de campo inválido.",
+            "fieldErrors": [
+                {
+                    "field": "idPortador",
+                    "message": "O tipo do campo deve ser: Long"
+                }
+            ]
+        }
+    },
+    {
+        "testId": 10,
+        "idPortador": "%20",
+        "code": 500,
+        "Authorization": "generate",
+        "data": {
+            "message": "Campo obrigatório não enviado.",
+            "fieldErrors": [
+                {
+                    "field": "idPortador",
+                    "message": "Variável de URI obrigatória."
+                }
+            ]
+        }
+    }
+]
