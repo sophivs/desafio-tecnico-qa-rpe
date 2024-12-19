@@ -117,4 +117,58 @@ export class ClientPage extends BasePage {
         await this.fillBalance(value);
         await this.clickButton('Salvar');
     }
+
+    /**
+     * Fills the name field in list page with the provided values.
+     * @param name The name to fill in the name field.
+     */
+    async fillNameList(name: string) {
+        const inputField = this.page.locator('input[name="j_idt17"]');
+        await expect(inputField).toBeEditable();
+
+        await inputField.fill(name);
+    }
+
+    /**
+     * Fills the date field in list page with the provided values.
+     * @param date The cpf to fill in the cpf field.
+     */
+    async fillValidateList(date: string) {
+        const inputField = this.page.locator('#calendario_input');
+        await expect(inputField).toBeEditable();
+
+        await inputField.click();
+        await inputField.press('Control+A');
+
+        await inputField.fill(date);
+    }
+
+    /**
+     * Check the client information in list.
+     * @param check The values to validate.
+     */
+    async checkClientElementsInList(check: any) {
+        await this.page.waitForTimeout(2000);
+        const tableBody = this.page.locator('table.table-bordered tbody');
+
+        const rowCount = await tableBody.locator('tr').count();
+        if (check.type === 'No data') {
+            expect(rowCount).toBeLessThan(1);
+            return
+        }
+
+        if (check.type === 'Multiple Values') {
+            expect(rowCount).toBeGreaterThan(1);
+            return
+        }
+
+        expect(rowCount).toBe(1);
+
+        const row = tableBody.locator('tr');
+        const cells = await row.locator('td').allInnerTexts();
+
+        expect(cells[0].trim()).toBe(check.nome);
+        expect(cells[1].trim()).toBe(check.cpf);
+        expect(cells[2].trim()).toBe(check.saldo);
+    }
 }

@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker';
 import { test } from '@playwright/test';
 import { pageManager } from '../src/pages/pageManager';
 import transactionRegisterData from '../src/data/transactionRegisterData.json';
+import transactionListData from '../src/data/transactionListData.json';
 
 test.describe('Test include transaction', () =>{
     test.beforeEach(async ({ page }) => {
@@ -31,6 +32,27 @@ test.describe('Test include transaction', () =>{
 
             await transactionPage.clickButton(transaction.botao);
             await transactionPage.checkMessage(transaction.mensagem);
+        });
+    }
+})
+
+test.describe('Test list transaction', () =>{
+    test.beforeEach(async ({ page }) => {
+        const page_manager = new pageManager(page);
+        await page_manager.navigateTo().listTransactionPage();
+    });
+
+    for (const transaction of transactionListData) {
+        test(`transaction list for ${transaction.id}`, async ({ page }) => {
+            const page_manager = new pageManager(page);
+            const transactionPage = page_manager.getTransactionPage();
+
+            if (transaction.nome) {
+                await transactionPage.fillClient(transaction.nome);
+            }
+
+            await transactionPage.clickButton('Pesquisar');
+            await transactionPage.checkTransactionElementsInList(transaction.check)
         });
     }
 })
