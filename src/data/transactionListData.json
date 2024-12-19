@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nome": "Walter Blanda",
+    "validade": "12/2025",
+    "check": {
+        "type": "Has data",
+        "nome": "Walter Blanda",
+        "cpf": "123.456.789-01",
+        "saldo": "R$ 4638.07"
+    }
+  },
+  {
+    "id": 2,
+    "nome": "Mr. Sheldon Medhurst",
+    "validade": "12/2025",
+    "check": {
+        "type": "No data"
+    }
+  },
+  {
+    "id": 3,
+    "check": {
+        "type": "Multiple Values"
+    }
+  }
+]

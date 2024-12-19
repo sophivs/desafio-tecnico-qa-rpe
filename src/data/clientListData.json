@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "nome": "Van Witting",
+    "validade": "12/2025",
+    "check": {
+        "type": "Has data",
+        "nome": "Van Witting",
+        "cpf": "425.056.598-20",
+        "saldo": "R$ 7929.37"
+    }
+  },
+  {
+    "id": 2,
+    "nome": "Van NoData Witting",
+    "validade": "12/2025",
+    "check": {
+        "type": "No data"
+    }
+  },
+  {
+    "id": 3,
+    "nome": "Van Witting",
+    "validade": "12/2020",
+    "check": {
+        "type": "No data"
+    }
+  },
+  {
+    "id": 4,
+    "check": {
+        "type": "Multiple Values"
+    }
+  }
+]

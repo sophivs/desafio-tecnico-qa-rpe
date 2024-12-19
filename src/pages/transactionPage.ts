@@ -90,4 +90,33 @@ export class TransactionPage extends BasePage {
     
         return result.toFixed(2);
     }
+
+    /**
+     * Check the client information in list.
+     * @param check The values to validate.
+     */
+    async checkTransactionElementsInList(check: any) {
+        await this.page.waitForTimeout(2000);
+        const tableBody = this.page.locator('table.table-bordered tbody');
+
+        const rowCount = await tableBody.locator('tr').count();
+        if (check.type === 'No data') {
+            expect(rowCount).toBeLessThan(1);
+            return
+        }
+
+        if (check.type === 'Multiple Values') {
+            expect(rowCount).toBeGreaterThan(1);
+            return
+        }
+
+        expect(rowCount).toBe(1);
+
+        const row = tableBody.locator('tr');
+        const cells = await row.locator('td').allInnerTexts();
+
+        expect(cells[0].trim()).toBe(check.nome);
+        expect(cells[1].trim()).toBe(check.cpf);
+        expect(cells[3].trim()).toBe(check.saldo);
+    }
 }
