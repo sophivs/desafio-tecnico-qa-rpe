@@ -1,0 +1,146 @@
+[
+    {
+        "testId": 1,
+        "idPortador": 2001,
+        "code": 201,
+        "Authorization": "generate",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes",
+            "nomeMae": "Maria da Silva",
+            "cpf": "91829438000",
+            "dataNascimento": "2000-04-15",
+            "sexo": "MASCULINO",
+            "telefone": {
+            "tipo": "CELULAR",
+            "ramal": "4020",
+            "area": "83",
+            "telefone": "999999999",
+            "receberSMS": false,
+            "faturaDigital": false
+            },
+            "grauParentesco": "PAI"
+        },
+        "data": {
+            "idGrauParentesco": 5,
+            "idDependente": 9999,
+            "telefone": "83999999999",
+            "cpf": "99999999999",
+            "idClienteTitularAssociado": 999999,
+            "nome": "PORTADOR DA FICCAO",
+            "nomeSocial": "PORTADOR NOME SOCIAL",
+            "dataNascimento": "1990-02-16",
+            "sexo": "M",
+            "nomeMae": "MAE DO PORTADOR",
+            "status": "A"
+        }
+    },
+    {
+        "testId": 2,
+        "idPortador": 2001,
+        "code": 201,
+        "Authorization": "generate",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes",
+            "nomeMae": "Maria da Silva",
+            "cpf": "91829438000",
+            "dataNascimento": "2000-04-15",
+            "sexo": "MASCULINO",
+            "grauParentesco": "PAI"
+        },
+        "data": {
+            "idGrauParentesco": 5,
+            "idDependente": 9999,
+            "telefone": "83999999999",
+            "cpf": "99999999999",
+            "idClienteTitularAssociado": 999999,
+            "nome": "PORTADOR DA FICCAO",
+            "nomeSocial": "PORTADOR NOME SOCIAL",
+            "dataNascimento": "1990-02-16",
+            "sexo": "M",
+            "nomeMae": "MAE DO PORTADOR",
+            "status": "A"
+        }
+    },
+    {
+        "testId": 3,
+        "idPortador": 2001,
+        "code": 400,
+        "Authorization": "generate",
+        "body": {
+            "nomeSocial": "João Gomes",
+            "nomeMae": "Maria da Silva",
+            "cpf": "91829438000",
+            "dataNascimento": "2000-04-15",
+            "sexo": "MASCULINO",
+            "grauParentesco": "PAI"
+        },
+        "data": {
+            "message": "ARGUMENTO_INVALIDO",
+            "fieldErrors": [
+                {
+                    "field": "nome",
+                    "message": "campo obrigatório(a)",
+                    "objectName": "nome"
+                }
+            ]
+        }
+    },
+    {
+        "testId": 4,
+        "idPortador": 2001,
+        "code": 401,
+        "Authorization": "Bearer token-without-access",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes",
+            "nomeMae": "Maria da Silva",
+            "cpf": "91829438000",
+            "dataNascimento": "2000-04-15",
+            "sexo": "MASCULINO",
+            "grauParentesco": "PAI"
+        },
+        "data": "Unauthorized"
+    },
+    {
+        "testId": 5,
+        "idPortador": 2001,
+        "code": 403,
+        "Authorization": "Bearer invalid-token",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes",
+            "nomeMae": "Maria da Silva",
+            "cpf": "91829438000",
+            "dataNascimento": "2000-04-15",
+            "sexo": "MASCULINO",
+            "grauParentesco": "PAI"
+        },
+        "data": "Forbidden"
+    },
+    {
+        "testId": 6,
+        "idPortador": "",
+        "code": 500,
+        "Authorization": "generate",
+        "body": {
+            "nome": "João da Silva",
+            "nomeSocial": "João Gomes",
+            "nomeMae": "Maria da Silva",
+            "cpf": "91829438000",
+            "dataNascimento": "2000-04-15",
+            "sexo": "MASCULINO",
+            "grauParentesco": "PAI"
+        },
+        "data": {
+            "message": "Campo obrigatório não enviado.",
+            "fieldErrors": [
+                {
+                    "field": "idPortador",
+                    "message": "Variável de URI obrigatória."
+                }
+            ]
+        }
+    }
+]

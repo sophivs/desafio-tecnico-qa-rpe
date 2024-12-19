@@ -1,0 +1,76 @@
+[
+    {
+        "testId": 1,
+        "idCartao": 2001,
+        "code": 200,
+        "Authorization": "generate",
+        "parameters": {
+            "idProduto": 1792618,
+            "senha_antiga": "d5f12e53a182c062b6bf30c1445153faff12269a",
+            "senha_nova": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"
+        },
+        "data": {
+            "msg": "A senha do cartão foi alterada com sucesso."
+        }
+    },
+    {
+        "testId": 2,
+        "idCartao": 2001,
+        "code": 400,
+        "Authorization": "generate",
+        "parameters": {
+            "senha_nova": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"
+        },
+        "data": {
+            "message": "Tipo de campo inválido.",
+            "fieldErrors": [
+                {
+                    "field": "idProduto",
+                    "senha_antiga": "O tipo do campo deve ser: Long"
+                }
+            ]
+        }
+    },
+    {
+        "testId": 3,
+        "idCartao": 2001,
+        "code": 400,
+        "Authorization": "generate",
+        "parameters": {
+            "senha_antiga": "d5f12e53a182c062b6bf30c1445153faff12269a"
+        },
+        "data": {
+            "message": "Tipo de campo inválido.",
+            "fieldErrors": [
+                {
+                    "field": "idProduto",
+                    "senha_nova": "O tipo do campo deve ser: Long"
+                }
+            ]
+        }
+    },
+    {
+        "testId": 4,
+        "idCartao": 2001,
+        "code": 401,
+        "Authorization": "Bearer token-without-access",
+        "parameters": {
+            "idProduto": 1792618,
+            "senha_antiga": "d5f12e53a182c062b6bf30c1445153faff12269a",
+            "senha_nova": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"
+        },
+        "data": "Unauthorized"
+    },
+    {
+        "testId": 4,
+        "idCartao": 2001,
+        "code": 403,
+        "Authorization": "Bearer invalid-token",
+        "parameters": {
+            "idProduto": 1792618,
+            "senha_antiga": "d5f12e53a182c062b6bf30c1445153faff12269a",
+            "senha_nova": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"
+        },
+        "data": "Forbidden"
+    }
+]
